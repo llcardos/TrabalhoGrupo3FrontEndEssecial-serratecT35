@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Cleber Store</title>
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" href="/assets/logo-sem-fundo.png">
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <script src="/scripts/login.js" defer></script>
+</head>
+
+<body>
+    <div class="container-login">
+        <div class="img-fundo">
+            <img src="/assets/fundo.png" alt="Modelo Cleber Store" class="right-image">
+        </div>
+        <div class="painel">
+            <div class="logo">
+                <img src="/assets/logo-horizontal.png" alt="Cleber Store logo">
+            </div>
+
+            <div class="login-card">
+                <p class="welcome-label">BEM-VINDO DE VOLTA</p>
+                <h1 class="login-title">Entrar na<br>sua conta</h1>
+
+                <form id="login-form" novalidate>
+                    <div class="form-group">
+                        <label for="username">Usuário</label>
+                        <div class="input-username">
+                            <i class="bi bi-person"></i>
+                            <input type="username" id="username" name="username" placeholder="Seu nome de usuário" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <div class="input-senha">
+                            <i class="bi bi-lock"></i>
+                            <input type="password" id="senha" name="senha" placeholder="Digite sua senha"
+                                autocomplete="current-password" required>
+                            <button type="button" class="toggle-senha" aria-label="Mostrar senha">
+                                <i class="bi bi-eye" id="eye-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="lembrar">
+                            <input type="checkbox" id="lembrar">
+                            <span>Lembrar-me</span>
+                        </label>
+                        <a href="#" class="esqueci">Esqueci minha senha</a>
+                    </div>
+
+                    <div id="mensagem-erro" class="mensagem-erro" hidden></div>
+
+                    <button type="submit" class="btn-entrar">
+                        <span id="btn-texto">ENTRAR</span>
+                        <span id="btn-loading" hidden><i class="bi bi-arrow-repeat spin"></i></span>
+                    </button>
+                </form>
+
+                <div class="divider">
+                    <hr><span>ou continue com</span>
+                    <hr>
+                </div>
+
+                <div class="social-buttons">
+                    <button class="social-btn" id="btn-google" aria-label="Entrar com Google">
+                        <i class="bi bi-google"></i>
+                    </button>
+                    <button class="social-btn" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </button>
+                    <button class="social-btn" aria-label="Apple">
+                        <i class="bi bi-apple"></i>
+                    </button>
+                </div>
+
+                <p class="cadastro">
+                    Ainda não tem conta? <a href="#">Criar cadastro</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
