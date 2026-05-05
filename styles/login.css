@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    --cor-primaria-rgb: 32, 16, 14; 
+    --cor-ternaria-rgb: 146, 59, 27;
+    --glass-bg: rgba(42, 18, 16, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-blur: blur(15px);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+.container-login {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.img-fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.img-fundo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.painel {
+    position: absolute;
+    left: 20%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.logo {
+    margin-bottom: 24px;
+}
+
+.logo img {
+    height: 150px;
+    width: auto;
+}
+
+.login-card {
+    /* Troque o background-color sólido por um RGBA (o '0.7' é a opacidade) */
+    background-color: var(--glass-bg);
+    
+    /* O segredo do efeito: desfoca o que está atrás do card */
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur); /* Suporte para Safari */
+
+    /* Uma borda sutil ajuda a definir o card sobre o fundo */
+    border: 1px solid var(--glass-border);
+    
+    border-radius: 16px;
+    padding: 40px 36px;
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.welcome-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #B7622C;
+}
+
+.login-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #f0ece6;
+    line-height: 1.15;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #d4cdc7;
+}
+
+.input-username,
+.input-senha {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Fundo levemente transparente */
+    background-color: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    transition: all 0.3s ease;
+}
+
+.input-username:focus-within,
+.input-senha:focus-within {
+    border-color: #B7622C;
+    background-color: rgba(30, 13, 11, 0.8);
+}
+
+.input-username .bi,
+.input-senha .bi {
+    color: #7a5040;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.input-username input,
+.input-senha input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #f0ece6;
+}
+
+.input-username input::placeholder,
+.input-senha input::placeholder {
+    color: #5a4035;
+}
+
+.toggle-senha {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #7a5040;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.toggle-senha:hover {
+    color: #B7622C;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.lembrar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #d4cdc7;
+}
+
+.lembrar input[type="checkbox"] {
+    accent-color: #923B1B;
+    width: 15px;
+    height: 15px;
+}
+
+.esqueci {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #B7622C;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.esqueci:hover {
+    opacity: 0.7;
+}
+
+.mensagem-erro {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    color: #e05c5c;
+    background-color: #3a1010;
+    border: 1px solid #6b2020;
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+.btn-entrar {
+    background-color: #923B1B;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-entrar:hover {
+    background-color: #5E3123;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spin {
+    display: inline-block;
+    animation: spin 0.8s linear infinite;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.divider hr {
+    flex: 1;
+    border: none;
+    border-top: 1px solid #3d1f15;
+}
+
+.divider span {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    color: #7a5040;
+    white-space: nowrap;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.social-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: #1e0d0b;
+    border: 1px solid #4a2218;
+    color: #d4cdc7;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.social-btn:hover {
+    background-color: #3a1a10;
+    border-color: #923B1B;
+}
+
+.cadastro {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #7a5040;
+    text-align: center;
+}
+
+.cadastro a {
+    color: #B7622C;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.cadastro a:hover {
+    opacity: 0.7;
+}

@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap');
+
+:root {
+    --cor-primaria: #20100e;
+    --cor-secundaria: #5E3123;
+    --cor-secundaria-op: #5E312330;
+    --cor-ternaria: #923B1B;
+    --cor-quaternaria: #B7622C;
+    --cor-Quinquinária: #323232;
+    --cor-sextenária: #5f605b;
+    --cor-fundo: #261010;
+    --cor-texto: #141414;
+    --cor-subtexto: #e5e7e3;
+    --cor-borda: #d9d9d9;
+    --cor-borda-op: #d9d9d910;
+    --cor-shadow: #00000010;
+}
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: var(--cor-primaria);
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+}
