@@ -1,40 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cleber Store</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="scripts/script.js" defer></script>
     <link rel="icon" href="/assets/logo-sem-fundo.png">
 </head>
+
 <body>
     <header>
         <section>
             <div class="nav">
                 <nav class="nav-categorias">
-                    <ol>
+                    <ol id="lista-categorias">
                         <img src="assets/logo-sem-fundo.png" alt="logo">
-                        <li><a href="#" id="categoria1">categoria1</a></li>
-                        <li><a href="#" id="categoria2">categoria2</a></li>
-                        <li><a href="#" id="categoria3">categoria3</a></li>
-                        <li><a href="#" id="categoria4">categoria4</a></li>
                     </ol>
                 </nav>
                 <nav class="nav-info">
                     <ul>
-                        <li><a href="#" id="login">login</a></li>
-                        <li><a href="#" id="carrinho">carrinho</a></li>
+                        <li><a href="#" id="login">Login</a></li>
+                        <li><a href="#" id="carrinho">Carrinho</a></li>
                     </ul>
                 </nav>
             </div>
         </section>
-
     </header>
     <main>
+        <img src="/assets/fundo.png" alt="imagem de fundo" class="imagem-fundo">
 
+        <div class="container-info">
+            <div class="texto-1">
+                <p>SEU ESTILO, SUA ESSÊNCIA</p>
+            </div>
+            <div class="texto-2">
+                <span>Vista quem você <span class="texto-2-destaque">é</span></span>
+            </div>
+            <div class="texto-3">
+                <span>Peças selecionadas para todos os momentos da sua vida.</span>
+            </div>
+            <div class="button">
+                <button type="submit">
+                    <span class="">Ver coleção</span>
+                    <span class="bi bi-arrow-right"></span>
+                </button>
+            </div>
+            <div class="container-icons">
+                <div class="icon-first">
+                    <span class="bi bi-truck"></span>
+                    <span class="container-icons-text-upper">Envio rápido</span>
+                    <span class="container-icons-text">Para todo o Brasil</span>
+                </div>
+                <div class="icon-second">
+                    <span class="bi bi-bookmark-star"></span>
+                    <span class="container-icons-text-upper">Qualidade</span>
+                    <span class="container-icons-text">que você merece</span>
+                </div>
+                <div class="icon-third">
+                    <span class="bi bi-shield-lock"></span>
+                    <span class="container-icons-text-upper">Compra segura</span>
+                    <span class="container-icons-text">seus dados protegidos</span>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
 
     </footer>
 </body>
+
 </html>
