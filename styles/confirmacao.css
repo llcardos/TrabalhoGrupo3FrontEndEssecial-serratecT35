@@ -1,0 +1,338 @@
+body {
+    background-color: #f0ebe3;
+    min-height: 100vh;
+}
+
+.store-header {
+    background-color: #fff;
+    border-bottom: 1px solid var(--cor-borda);
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+.store-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.header-logo img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.secure-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--cor-sextenaria);
+    letter-spacing: 0.04em;
+}
+
+.secure-badge i {
+    font-size: 1rem;
+    color: var(--cor-ternaria);
+}
+
+main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+}
+
+.confirmacao-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.success-banner {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px 36px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    box-shadow: 0 1px 4px var(--cor-shadow);
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: #2da44e;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.success-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cor-texto);
+    margin-bottom: 6px;
+}
+
+.success-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--cor-sextenaria);
+    line-height: 1.5;
+}
+
+.order-number {
+    margin-top: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--cor-quinquinaria);
+}
+
+.order-number strong {
+    color: var(--cor-ternaria);
+    font-size: 1rem;
+}
+
+.order-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 32px;
+    box-shadow: 0 1px 4px var(--cor-shadow);
+}
+
+.card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cor-texto);
+    margin-bottom: 20px;
+}
+
+#confirmacao-items {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.conf-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f0ebe3;
+}
+
+.conf-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.conf-item-img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: var(--cor-background-card);
+    flex-shrink: 0;
+}
+
+.conf-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.conf-item-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--cor-texto);
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.conf-item-qty {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    color: var(--cor-sextenaria);
+}
+
+.conf-item-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--cor-texto);
+    white-space: nowrap;
+}
+
+.order-totals {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid var(--cor-borda);
+    padding-top: 16px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    color: var(--cor-quinquinaria);
+}
+
+.desconto-val {
+    color: #2da44e;
+    font-weight: 600;
+}
+
+.gratis {
+    color: #2da44e;
+    font-weight: 600;
+}
+
+.total-divider {
+    height: 1px;
+    background: var(--cor-borda);
+}
+
+.total-final {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--cor-texto);
+}
+
+.total-final span:last-child {
+    font-size: 1.25rem;
+    color: var(--cor-ternaria);
+}
+
+.delivery-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 28px;
+    box-shadow: 0 1px 4px var(--cor-shadow);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.delivery-card>i {
+    font-size: 1.8rem;
+    color: var(--cor-quaternaria);
+    flex-shrink: 0;
+}
+
+.delivery-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--cor-sextenaria);
+    margin-bottom: 4px;
+}
+
+.delivery-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--cor-texto);
+}
+
+.client-info {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 28px;
+    box-shadow: 0 1px 4px var(--cor-shadow);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    color: var(--cor-quinquinaria);
+    line-height: 1.7;
+    display: none;
+}
+
+.client-info.visible {
+    display: block;
+}
+
+.client-info strong {
+    color: var(--cor-texto);
+}
+
+.confirmacao-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.btn-continuar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    background: var(--cor-secundaria);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.btn-continuar:hover {
+    background: var(--cor-ternaria);
+}
+@media (max-width: 767px) {
+    .store-header-inner {
+        padding: 0 12px;
+        height: 60px;
+    }
+
+    main {
+        padding: 20px 12px 60px;
+    }
+
+    .success-banner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 28px 20px;
+        gap: 16px;
+    }
+
+    .success-text h1 {
+        font-size: 1.6rem;
+    }
+
+    .order-card {
+        padding: 20px 16px;
+    }
+
+    .delivery-card {
+        padding: 16px;
+    }
+
+    .client-info {
+        padding: 16px;
+    }
+
+    .btn-continuar {
+        width: 100%;
+        justify-content: center;
+    }
+}

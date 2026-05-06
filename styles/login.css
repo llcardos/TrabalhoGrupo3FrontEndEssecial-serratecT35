@@ -312,3 +312,31 @@ body {
 .cadastro a:hover {
     opacity: 0.7;
 }
+
+@media (max-width: 767px) {
+    .img-fundo img {
+        object-position: left center;
+    }
+
+    .painel {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .logo img {
+        height: 80px;
+    }
+
+    .login-card {
+        width: 100%;
+        padding: 28px 20px;
+        gap: 16px;
+    }
+
+    .login-title {
+        font-size: 2rem;
+    }
+}
