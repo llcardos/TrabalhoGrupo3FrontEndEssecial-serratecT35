@@ -6,14 +6,15 @@
     --cor-secundaria-op: #5E312330;
     --cor-ternaria: #923B1B;
     --cor-quaternaria: #B7622C;
-    --cor-Quinquinária: #323232;
-    --cor-sextenária: #5f605b;
+    --cor-quinquinaria: #323232;
+    --cor-sextenaria: #5f605b;
     --cor-fundo: #261010;
     --cor-texto: #141414;
     --cor-subtexto: #e5e7e3;
     --cor-borda: #d9d9d9;
     --cor-borda-op: #d9d9d910;
     --cor-shadow: #00000010;
+    --cor-background-card: #e8e2da;
 }
 
 /* Reset básico */
