@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho — Cleber Store</title>
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/carrinho.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" href="/assets/logo-sem-fundo.png">
+    <script src="/scripts/carrinho.js" defer></script>
+</head>
+
+<body>
+    <header class="store-header">
+        <div class="store-header-inner">
+            <a href="/index.html" class="header-logo">
+                <img src="/assets/logo-crop.png" alt="Cleber Store">
+            </a>
+
+            <div class="step-indicator">
+                <div class="step step--active">
+                    <div class="step-circle">1</div>
+                    <span class="step-label">Carrinho</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-circle">2</div>
+                    <span class="step-label">Checkout</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-circle">3</div>
+                    <span class="step-label">Confirmação</span>
+                </div>
+            </div>
+
+            <div class="secure-badge">
+                <i class="bi bi-shield-lock-fill"></i>
+                <span>Compra 100% Segura</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="cart-empty" class="cart-empty">
+            <i class="bi bi-bag-x"></i>
+            <h2>Seu carrinho está vazio</h2>
+            <p>Adicione produtos para continuar.</p>
+            <a href="/pages/produto.html" class="btn-primary">Ver coleção</a>
+        </div>
+
+        <div id="cart-content" class="cart-layout" style="display:none">
+            <div class="cart-main">
+                <div class="cart-header">
+                    <h1>Meu Carrinho</h1>
+                    <a href="/pages/produto.html" class="link-continuar">
+                        <i class="bi bi-arrow-left"></i> Continuar comprando
+                    </a>
+                </div>
+
+                <div class="cart-items-header">
+                    <span>Produto</span>
+                    <span></span>
+                    <span>Quantidade</span>
+                    <span>Total</span>
+                    <span></span>
+                </div>
+
+                <div id="cart-items-container"></div>
+            </div>
+
+            <aside class="cart-summary-panel">
+                <h2 class="summary-title">Resumo do pedido</h2>
+
+                <div class="summary-row">
+                    <span>Subtotal (<span id="summary-qty">0</span> iten(s))</span>
+                    <span id="summary-subtotal">R$&nbsp;0,00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Frete</span>
+                    <span class="gratis">Grátis</span>
+                </div>
+                <div class="summary-divider"></div>
+                <div class="summary-total-row">
+                    <span>TOTAL</span>
+                    <span id="summary-total" class="summary-total-value">R$&nbsp;0,00</span>
+                </div>
+
+                <a href="/pages/checkout.html" class="btn-checkout-cta">
+                    Continuar para Checkout
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+                <div class="summary-secure">
+                    <i class="bi bi-shield-check"></i>
+                    <span>Compra 100% segura e criptografada</span>
+                </div>
+            </aside>
+        </div>
+    </main>
+</body>
+
+</html>
