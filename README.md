@@ -1,3 +1,11 @@
+===== TrabalhoGrupo3FrontEndEssecial-serratecT35 ===== 
+-Grupo 03: 
+-Elisa Barbosa Kappaun - elisakappaun-netizen
+-Lucas Lopes Cardoso - llcardos
+-Marcelo da Silva Oliveira - MarceloMdx
+-Nathália de Queiroz Antunes - nathaliaa-qa
+-Pedro Lucas da Costa Teixeira - pedroteixeira5
+
 Projeto Frontend Essencial
 Desenvolvimento de um E-commerce
 
