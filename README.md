@@ -1,10 +1,11 @@
-===== TrabalhoGrupo3FrontEndEssecial-serratecT35 ===== 
--Grupo 03: 
--Elisa Barbosa Kappaun - elisakappaun-netizen
--Lucas Lopes Cardoso - llcardos
--Marcelo da Silva Oliveira - MarceloMdx
--Nathália de Queiroz Antunes - nathaliaa-qa
--Pedro Lucas da Costa Teixeira - pedroteixeira5
+## 💻 Trabalho Grupo 3 | Front-End Essencial - Serratec (T35)
+
+### 👥 Equipe 03
+* **Elisa Barbosa Kappaun** - [@elisakappaun-netizen](https://github.com/elisakappaun-netizen)
+* **Lucas Lopes Cardoso** - [@llcardos](https://github.com/llcardos)
+* **Marcelo da Silva Oliveira** - [@MarceloMdx](https://github.com/MarceloMdx)
+* **Nathália de Queiroz Antunes** - [@nathaliaa-qa](https://github.com/nathaliaa-qa)
+* **Pedro Lucas da Costa Teixeira** - [@pedroteixeira5](https://github.com/pedroteixeira5)
 
 Projeto Frontend Essencial
 Desenvolvimento de um E-commerce
