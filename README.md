@@ -1,3 +1,13 @@
+# 🛍️ Cleber Store
+
+> Projeto desenvolvido para o curso de Front-End Essencial do Serratec (Turma T35).
+
+🔗 **Deploy:** [https://eclectic-figolla-050850.netlify.app](https://eclectic-figolla-050850.netlify.app)
+
+Uma loja virtual de moda completa, com navegação entre páginas, integração com API externa, carrinho de compras, checkout e confirmação de pedido.
+
+---
+
 ## 💻 Trabalho Grupo 3 | Front-End Essencial - Serratec (T35)
 
 ### 👥 Equipe 03
@@ -7,40 +17,152 @@
 * **Nathália de Queiroz Antunes** - [@nathaliaa-qa](https://github.com/nathaliaa-qa)
 * **Pedro Lucas da Costa Teixeira** - [@pedroteixeira5](https://github.com/pedroteixeira5)
 
-Projeto Frontend Essencial
-Desenvolvimento de um E-commerce
+---
 
-Problema/Objetivo:
+## 🗂️ Estrutura do Projeto
 
-    A ideia deste projeto é proporcionar a oportunidade de aplicar seus
-    conhecimentos em HTML, CSS e Javascript aprendido nas aulas, pensando no
-    desenvolvimento de páginas para um e-commerce fictício. O projeto consistirá
-    na criação de diversas páginas essenciais, com uma boa experiência para o
-    usuário.
+```
+📁 TrabalhoGrupo3FrontEndEssecial-serratecT35/
+├── index.html              # Página inicial (landing page)
+├── assets/                 # Imagens e logos
+├── pages/
+│   ├── login.html          # Autenticação do usuário
+│   ├── produto.html        # Catálogo de produtos
+│   ├── carrinho.html       # Carrinho de compras
+│   ├── checkout.html       # Finalização do pedido
+│   └── confirmacao.html    # Confirmação do pedido
+├── scripts/
+│   ├── carrinho.js         # Lógica do carrinho (localStorage + API)
+│   ├── checkout.js         # Resumo do pedido, CEP, pagamento
+│   ├── confirmacao.js      # Exibição do pedido confirmado
+│   ├── login.js            # Autenticação via API
+│   ├── produto.js          # Listagem e filtragem de produtos
+│   └── script.js           # Scripts gerais
+└── styles/
+    ├── global.css          # Estilos globais e variáveis
+    ├── view.css            # Estilos da landing page
+    ├── login.css
+    ├── produto.css
+    ├── carrinho.css
+    ├── checkout.css
+    └── confirmacao.css
+```
 
-Regras:
-- HTML Estruturado: Utilize HTML semântico para estruturar o conteúdo das páginas, garantindo uma boa organização e acessibilidade.
-- Vale: 5 pontos
-- Estilo com CSS: Aplique estilos visuais utilizando CSS para tornar as páginas atrativas e responsivas, garantindo uma boa experiência do usuário em diferentes dispositivos.
-- Vale: 5 pontos
-- Design Atraente: Procure criar um design atraente e intuitivo para o e-commerce, considerando aspectos como usabilidade, harmonia de cores e disposição dos elementos na página.
-- Vale: 5 pontos
-- Frameworks: Obrigatório o uso do BootStrap para criar um Header no site.
-- Vale: 5 pontos
-- Responsividade: As páginas devem ser responsivas, ou seja, devem se adaptar de forma adequada a diferentes tamanhos de tela, desde dispositivos móveis até desktops.
-- Vale: 10 pontos
-- Interatividade com Javascript: Adicione interatividade às páginas utilizando Javascript básico para funcionalidades como, autenticar o usuário na pagina de login, adicionar itens ao carrinho de compras, calcular o total da compra e validar formulários na página de checkout, entre outros.
-- Vale: 15 pontos
-- Boas Práticas de Desenvolvimento: Utilize boas práticas de desenvolvim ento  web, como separação (HTML, CSS e Javascript em arquivosseparados), comentários no código para facilitar a compreensão e organizaçãodo projeto em diretórios.
-- Vale: 10 pontos
-- Versionamento: Código da aplicação deverá estar disponivel no GitHub, repositório terá que ser criado no modelo ‘Privado’, e compartilhado com o professor.
-- Vale: 10 pontos
-- Commits: Todos os integrantes devem ter os commits no GitHub, se caso ao menos um integrante não enviar o código, todo grupo sera descontado.
-- Vale: 10 pontos
-- CRUD: Uso do CRUD básico, como (GET, POST, PUT, DELETE)
-- Vale: 15 pontos
-- Bônus: Deploy da aplicação no Netlify
+---
 
-- Total Trabalho: 90 pontos
-- Participação em aula: 10 pontos
-- Nota Final: 100 pontos
+## 🔌 API Utilizada — DummyJSON
+
+O projeto consome a API pública [DummyJSON](https://dummyjson.com), que simula um backend completo com autenticação, produtos e carrinho.
+
+**Base URL:** `https://dummyjson.com`
+
+### Endpoints utilizados
+
+| Funcionalidade | Método | Endpoint |
+|---|---|---|
+| Autenticação | `POST` | `/auth/login` |
+| Listar produtos por categoria | `GET` | `/products/category/{categoria}` |
+| Criar carrinho | `POST` | `/carts/add` |
+| Atualizar carrinho | `PUT` | `/carts/{id}` |
+| Deletar carrinho | `DELETE` | `/carts/{id}` |
+
+### Categorias de produtos disponíveis
+
+| Slug da API | Nome exibido |
+|---|---|
+| `tops` | Camisetas |
+| `womens-dresses` | Vestidos Femininos |
+| `mens-shirts` | Camisas Masculinas |
+| `womens-shoes` | Sapatos Femininos |
+
+> Os preços são convertidos de USD para BRL com uma taxa de multiplicação de `× 5,5`.
+
+### CEP (endereço no checkout)
+
+O preenchimento automático de endereço utiliza a API pública **ViaCEP**:
+
+```
+GET https://viacep.com.br/ws/{cep}/json/
+```
+
+---
+
+## 🔐 Autenticação
+
+O login é feito via `POST` para `https://dummyjson.com/auth/login` com `username` e `password` no corpo da requisição.
+
+Após o login bem-sucedido, o token de acesso (`accessToken`) é salvo em `sessionStorage` (ou `localStorage` caso "Lembrar-me" esteja marcado), junto com os dados básicos do usuário.
+
+### Exemplo de requisição de login
+
+```http
+POST https://dummyjson.com/auth/login
+Content-Type: application/json
+
+{
+  "username": "emilys",
+  "password": "emilyspass",
+  "expiresInMins": 60
+}
+```
+
+### Exemplo de resposta
+
+```json
+{
+  "id": 1,
+  "username": "emilys",
+  "firstName": "Emily",
+  "lastName": "Johnson",
+  "email": "emily.johnson@x.dummyjson.com",
+  "image": "https://dummyjson.com/icon/emilys/128",
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+> **Credencial de teste:**
+> - **Usuário:** `emilys`
+> - **Senha:** `emilyspass`
+
+---
+
+## 🛒 Fluxo da Aplicação
+
+```
+Página Inicial (index.html)
+        ↓
+    Login (login.html)
+        ↓
+  Catálogo de Produtos (produto.html)
+        ↓
+  Carrinho de Compras (carrinho.html)
+        ↓
+     Checkout (checkout.html)
+        ↓
+  Confirmação do Pedido (confirmacao.html)
+```
+
+---
+
+## ▶️ Como executar
+
+O projeto é composto apenas por arquivos estáticos (HTML, CSS e JavaScript puro), sem necessidade de instalação ou build.
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/llcardos/TrabalhoGrupo3FrontEndEssecial-serratecT35.git
+   ```
+2. Abra o arquivo `index.html` diretamente no navegador, **ou** utilize uma extensão como [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) no VS Code para evitar problemas com caminhos absolutos.
+
+---
+
+## 🛠️ Tecnologias
+
+* HTML5
+* CSS3
+* JavaScript (ES6+)
+* [Bootstrap Icons](https://icons.getbootstrap.com/)
+* [DummyJSON API](https://dummyjson.com)
+* [ViaCEP API](https://viacep.com.br)
+
